@@ -55,10 +55,6 @@ const store = MongoStore.create({
   touchAfter: 24 * 3600,
 });
 
-store.on("error",()=>{
-  console.log("error in mongo session store.",error);
-})
-
 
 //create session   
 const sessionOptions = {
@@ -72,6 +68,11 @@ const sessionOptions = {
     httpOnly: true
 },
 };
+
+app.get("/", (req, res) => {
+  res.send("Welcome to MAJORPROJECT backend!");
+});
+
 
 
 // app.get("/",(req,res)=>{
