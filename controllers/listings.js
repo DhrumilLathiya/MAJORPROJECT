@@ -72,7 +72,7 @@ res.redirect(`/listings/${id}`);
 
 module.exports.Destroylistings=async(req,res)=>{
    let{id}=req.params;
-   deletedlist=await Listing.findByIdAndDelete(id);
+  const deletedlist=await Listing.findByIdAndDelete(id);
    console.log(deletedlist);
    req.flash("success","Listing deleted!");//when delete listin then flash mesege shown..
    res.redirect("/listings");
