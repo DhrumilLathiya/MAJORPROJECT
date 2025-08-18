@@ -216,8 +216,9 @@ app.use((req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to MAJORPROJECT backend!");
+  res.redirect("/listings");
 });
+
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", usersRouter);
